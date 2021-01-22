@@ -3,10 +3,69 @@
         <title>Machine configurator</title>
 
         <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="https://assets.ctl.io/chi/3.7.0/chi.css">
+        <script src="https://assets.ctl.io/chi/3.7.0/js/chi.js"></script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div id="configurator">
-            <input type="range" min="0.512" max="4" value="2" class="range-slider"/>
+        <div id="configurator"  class="chi">
+            <div class="chi-form__item">
+                <label class="chi-label" for="range09">RAM</label>
+                <div class="chi-input__wrapper">
+                    <input class="chi-range-slider" type="range" value="1" min="0" max="3" step="1" id="range09">
+                    <div class="chi-input__tick-bar">
+                    <div>
+                        <div class="chi-input__tick"></div>
+                        <div class="chi-input__tick-label">512MB</div>
+                    </div>
+                    <div>
+                        <div class="chi-input__tick"></div>
+                        <div class="chi-input__tick-label">1GB</div>
+                    </div>
+                    <div>
+                        <div class="chi-input__tick"></div>
+                        <div class="chi-input__tick-label">2GB</div>
+                    </div>
+                    <div>
+                        <div class="chi-input__tick"></div>
+                        <div class="chi-input__tick-label">4GB</div>
+                    </div>
+                </div>
+                <div class="chi-input__progress"></div>
+                <div class="chi-input__thumb"></div>
+            </div>
+            <div class="chi-form__item -mt--3">
+                <div class="chi-label__wrapper">
+                    <label class="chi-label" for="example-he1">CPU</label>
+                    <div class="chi-label__help">
+                        <button class="chi-button -icon -sm -flat" id="example__help-button" aria-label="Help" data-target="#example__help-popover">
+                            <i class="chi-icon icon-circle-info-outline"></i>
+                    </button>
+                    <section class="chi-popover chi-popover--top -animated" id="example__help-popover" aria-modal="true" role="dialog" aria-hidden="true" x-placement="top">
+                        <div class="chi-popover__content">
+                            <p class="chi-popover__text">Select your CPU needs</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <select class="chi-select" id="example-he1">
+                <option value="">Select</option>
+                <option>1 Core</option>
+                <option>2 Cores</option>
+                <option>3 Cores</option>
+                <option>4 Cores</option>
+            </select>
         </div>
+        <button class="chi-button -mt--3">Setup</button>
+
+        <script>chi.popover(document.getElementById('example__help-button'));</script>
+        </div>
+
+        <script>chi.rangeSlider(document.getElementById('range09'));</script>
+
+        </div>
+        <script src="/js/index.js"></script>
     </body>
 </html>
