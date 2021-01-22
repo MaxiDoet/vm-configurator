@@ -12,9 +12,9 @@
     <body>
         <div id="configurator"  class="chi">
             <div class="chi-form__item">
-                <label class="chi-label" for="range09">RAM</label>
+                <label class="chi-label" for="ram-range">RAM</label>
                 <div class="chi-input__wrapper">
-                    <input class="chi-range-slider" type="range" value="1" min="0" max="3" step="1" id="range09">
+                    <input class="chi-range-slider" type="range" value="1" min="0" max="3" step="1" id="ram-range">
                     <div class="chi-input__tick-bar">
                     <div>
                         <div class="chi-input__tick"></div>
@@ -58,12 +58,48 @@
                 <option>4 Cores</option>
             </select>
         </div>
-        <button class="chi-button -mt--3">Setup</button>
-
+        <div class="chi-form__item -mt--3">
+                <label class="chi-label" for="storage-range">Storage</label>
+                <div class="chi-input__wrapper">
+                    <input class="chi-range-slider" type="range" value="1" min="0" max="3" step="1" id="storage-range">
+                    <div class="chi-input__tick-bar">
+                    <div>
+                        <div class="chi-input__tick"></div>
+                        <div class="chi-input__tick-label">5GB</div>
+                    </div>
+                    <div>
+                        <div class="chi-input__tick"></div>
+                        <div class="chi-input__tick-label">20GB</div>
+                    </div>
+                    <div>
+                        <div class="chi-input__tick"></div>
+                        <div class="chi-input__tick-label">50GB</div>
+                    </div>
+                    <div>
+                        <div class="chi-input__tick"></div>
+                        <div class="chi-input__tick-label">100GB</div>
+                    </div>
+                </div>
+                <div class="chi-input__progress"></div>
+                <div class="chi-input__thumb"></div>
+            </div>
         <script>chi.popover(document.getElementById('example__help-button'));</script>
         </div>
+        <div class="chi-divider -mt--3"></div>  
+        <div class="chi-dropdown -mt--3">
+            <button id="dropdown-animate" class="chi-button chi-dropdown__trigger -animate">Select OS</button>
+            <div class="chi-dropdown__menu">
+                <a class="chi-dropdown__menu-item" href="#">Ubuntu 20.10</a>
+                <a class="chi-dropdown__menu-item" href="#">Debian 10.7</a>
+                <a class="chi-dropdown__menu-item" href="#">Arch Linux 2021.01.01</a>
+            </div>
+        </div>
 
-        <script>chi.rangeSlider(document.getElementById('range09'));</script>
+        <script>chi.dropdown(document.getElementById('dropdown-animate'));</script>  
+        
+        <button class="chi-button -mt--3">Setup</button>
+        <script>chi.rangeSlider(document.getElementById('ram-range'));</script>
+        <script>chi.rangeSlider(document.getElementById('storage-range'));</script>
 
         </div>
         <script src="/js/index.js"></script>
